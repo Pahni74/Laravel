@@ -16,7 +16,7 @@ use App\PembelianBuku;
 Route::get('/', function () {
     return Buku::all();
 });
-Route::get('pesan', function(){
+Route::get('messsage', function(){
     return 'Halo ini Halaman Pesan';
 });
 Route::get('Bola', function(){
@@ -71,3 +71,34 @@ Route::get('siswa/{nama}/{nilai?}', function ($nama,$nilai = ' Belum Memiliki Ni
     }
     return 'Halo : '.$nama.'<br> '.$nilai.'<br> '.$grade;
 });
+
+Route::get('contoh','ContohController@latihan');
+Route::get('contoh2','ContohController@latihan2');
+Route::get('profil2','ContohController@latihan3');
+Route::get('profil3','ContohController@latihan4');
+Route::get('biodata2','BiodataController@biodata');
+Route::get('menu/{mkn}','ContohController@menu');
+Route::get('menu2/{mkn?}','ContohController@menu');
+Route::get('pesan/{makan?}/{mkn?}/{uang?}','ContohController@pesan');
+Route::get('tampil-buku','BukuController@tampil');
+Route::get('hitung-buku','BukuController@hitungbuku');
+
+//CRUD
+Route::get('get-buku','BukuController@index');
+Route::get('create-buku/{judul}','BukuController@createdata');
+Route::get('get-buku/{id}','BukuController@show');
+Route::get('delete-buku/{id}/{judul}','BukuController@delete');
+Route::get('update-buku/{id}/{judul}','BukuController@update');
+
+
+// Route::resource('students', 'StudentsController');
+//CRUD 2
+Route::get('siswa','SiswaController@index');
+Route::get('create-siswa/{nama}/{nis}','SiswaController@create');
+Route::get('show-siswa/{id}','SiswaController@show');
+Route::get('update-siswa/{id}/{nama}/{nis}','SiswaController@update');
+Route::get('delete-siswa/{id}/{nama}','SiswaController@destroy');
+
+
+
+
