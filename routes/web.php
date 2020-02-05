@@ -99,6 +99,19 @@ Route::get('show-siswa/{id}','SiswaController@show');
 Route::get('update-siswa/{id}/{nama}/{nis}','SiswaController@update');
 Route::get('delete-siswa/{id}/{nama}','SiswaController@destroy');
 
+//Passing Data
+Route::get('passing','PracticeController@pass');
+Route::get('passing1','PracticeController@pass1');
+Route::get('status/{a?}','PracticeController@status');
+Route::get('buku','PracticeController@loop');
+
+//Book
+Route::get('book','BukuController@index');
+Route::get('book/{id}','BukuController@show');
+
+//Gaji
+Route::get('gaji','GajiController@index');
+Route::get('gaji/{id}','GajiController@show');
 
 
 

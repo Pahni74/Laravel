@@ -8,7 +8,7 @@ class BukuController extends Controller
 {
     public function index(){
         $buku = Buku::all();
-        return $buku;
+        return view('buku.index',compact('buku'));
     }
     public function tampil(){
         $buku = Buku::select('judul','jumlah_halaman','penerbit')->take(5)->get();
@@ -16,7 +16,7 @@ class BukuController extends Controller
     }
     public function show($id){
         $buku = Buku::find($id);
-        return $buku;
+        return view('buku.show',compact('buku'));
     }
     public function hitungbuku(){
         $buku = Buku::count();
